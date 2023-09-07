@@ -178,7 +178,7 @@
 
 
         <!-- product and plateform -->
-        <div class="plateform_container" id="services" >
+        <div class="plateform_container" id="services">
             <h2 class="plateform_heading">Digital Services</h2>
             <div class="plateform_figure">
 
@@ -226,7 +226,7 @@
 
 
         <!-- grid system information -->
-        <div class="info_container" id="resources" >
+        <div class="info_container" id="resources">
             <h2 class="plateform_heading">Resources</h2>
             <div class="info_grid">
                 <img class="grids" id="grid-1" src="./Images/reports-publication.jpg" alt="">
@@ -255,67 +255,47 @@
         </div>
 
 
-
-    
-
-
-        <!-- some js code for giving greate experience -->
-        <script>
-            // Get references to elements
-            const checkbox = document.getElementById("click");
-            const ulElement = document.querySelector("ul");
-            const menu_button = document.getElementById('menu_button');
-
-            // Toggle popup visibility when menu button is clicked
-            function togglePopup() {
-                checkbox.checked = !checkbox.checked;
-
-                if (checkbox.checked) {
-                    ulElement.style.left = '0'; // Show the popup
-                    console.log("Popup opened");
-                } else {
-                    ulElement.style.left = '100%'; // Hide the popup
-                    console.log("Popup closed");
-                }
-            }
-
-            // Add event listener to menu button
-            menu_button.addEventListener('click', togglePopup);
-
-            // Handle navigation links inside the popup menu
-            const list = document.querySelectorAll('.nav-link');
-            list.forEach((element) => {
-                element.addEventListener('click', function () {
-                    document.getElementById("click").checked = false; // Uncheck the checkbox
-                    ulElement.style.left = '0'; // Hide the popup
-                    location.href = `#${element.value}`; // Scroll to the clicked section
-                })
-            });
-
-            // Smooth scrolling for anchor links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                });
+        <!-- input taking here  -->
+        <div class="contact-form-container">
+            <h2 class="plateform_heading">Your Suggestion : </h2>
+            <form class="contact-form">
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+                </div>
+                <div class="input-container">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91">
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email">
+                </div>
+                <div class="input-container">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit">Submit Now</button>
+            </form>
+        </div>
 
 
-            // Close popup and uncheck checkbox when navigation link is clicked
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(navLink => {
-                navLink.addEventListener('click', () => {
-                    ulElement.style.left = '100%'; // Hide the popup
-                    checkbox.checked = false; // Uncheck the checkbox
-                    console.log("Popup closed");
-                });
-            });
+        </div>
 
 
-        </script>
+
+        <!-- footer section -->
+        <footer class="custom-footer">
+            <div class="footer">
+                <p>© 2023 Tekdi Technologies. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+
+        
+        <!-- Script used for : giving greate experience
+        Responsive Navigation Menu with Popup Animation and Smooth Scrolling -->
+        <script src="script.js"></script>
 
 </body>
-
 </html>
