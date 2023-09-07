@@ -1,0 +1,620 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "signika negative";
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar design */
+#navbar_container {
+  /* min-width: 100%; */
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  z-index: 2;
+  background-color: white;
+}
+.navbar {
+  margin: auto;
+  width: 70%;
+  min-height: 60px;
+  /* box-shadow: 0px 0px 6px 0px red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(180, 178, 178);
+  color: black;
+  font-family: "signika negative";
+}
+.nav_name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgb(209, 156, 56);
+}
+.navbar a {
+  text-decoration: none;
+}
+/* h1 is heading of navbar */
+.navbar a h1 {
+  font-size: 2.3rem;
+  color: black;
+}
+/* this is navbar left heading  */
+#heading {
+  align-items: center;
+  margin-left: 4vw;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+}
+#heading h1 {
+  font-family: "signika negative";
+}
+/* this includes all navbar menu with ul */
+
+nav ul {
+  z-index: 3;
+  display: flex;
+}
+/* icon which effect when responsive design */
+nav .menu-btn i {
+  display: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+nav ul li {
+  font-family: "bree serif";
+  list-style: none;
+  padding: 8px;
+}
+/* this is checkbox which use when responsive design */
+#click {
+  display: none;
+}
+/* design all anchor tag */
+nav ul li a {
+  text-decoration: none;
+  padding: 7px 9px;
+  cursor: pointer;
+  color: red;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  transition: all 0.4s ease;
+  font-family: "signika negative";
+}
+
+nav ul li a:hover {
+  color: #1b1b1b;
+  background-color: rgb(179, 179, 228);
+}
+
+nav ul li #active {
+  color: #1b1b1b;
+  background-color: white;
+}
+nav ul li #active:active,
+nav ul li a:active {
+  background-color: rgb(233, 127, 127);
+}
+#logo {
+  width: 140px;
+}
+
+/* responsive navbar */
+@media only screen and (max-width: 1100px) {
+  .navbar a h1 {
+    font-size: 2rem;
+  }
+  #heading {
+    gap: 3vw;
+  }
+  #heading h1 {
+    margin-left: 0;
+  }
+
+  nav .menu-btn i {
+    display: block;
+    color: black;
+  }
+
+  nav ul {
+    position: fixed;
+    top: 60px;
+    background-color: #f2f2f2;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    left: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+    text-align: left;
+  }
+
+  nav ul li {
+    margin: 14px 0px;
+  }
+
+  nav ul li a {
+    font-size: 22px;
+    color: black;
+    opacity: 0.8;
+  }
+
+  #click {
+    display: none;
+  }
+
+  #content h1 {
+    font-size: 1.6rem;
+  }
+
+  /* when checked then ul will showing */
+  #click:checked ~ #linkBox ul {
+    left: 0%;
+  }
+
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+
+  nav ul li {
+    margin: 5px 0px;
+    border-bottom: 1px solid rgb(180, 178, 178);
+  }
+
+  nav ul li a {
+    font-size: 19px;
+  }
+
+  #click {
+    display: none;
+  }
+
+  nav .menu-btn {
+    position: absolute;
+    right: 25vw;
+  }
+  .company_container {
+    padding: 6rem 0.5rem;
+  }
+}
+/* when mobile phone */
+@media (max-width: 600px) {
+  .navbar {
+    width: 100%;
+  }
+  nav .menu-btn {
+    position: absolute;
+    right: 5vw;
+  }
+}
+
+/* main front image */
+.front_info {
+  padding-bottom: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+/* their description */
+.first_description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  background-color: #f1f1f1;
+  padding: 3rem 0 2rem 0;
+}
+/* upper */
+.upper_description {
+  margin-left: 9rem;
+}
+.lower_description {
+  width: 100%;
+}
+.basic_info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 62%;
+}
+/* media query for that container */
+@media (max-width: 900px) {
+  .basic_info {
+    width: 82%;
+  }
+  .upper_description {
+    margin-left: 2rem;
+  }
+}
+
+.basic_info_heading {
+  font-size: 2.2rem;
+  letter-spacing: 0.05rem;
+  word-spacing: 1px;
+}
+.basic_info_para {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+/* lower */
+.slider_container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  overflow: hidden;
+}
+.slider_figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 600%;
+
+  position: relative;
+  top: 0;
+  left: 0%;
+
+  animation: slider 0.3s ease-in infinite;
+}
+/* animatin */
+.slider_figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 200%;
+
+  position: relative;
+  top: 0;
+  left: 0%;
+
+  animation: slider 6s infinite; /* Each step + 1s pause = 2s * 8 steps = 16s total */
+}
+
+/* animation */
+@keyframes slider {
+  0% {
+    left: 0%;
+  }
+  16.8% {
+    left: -50%;
+  }
+  33.6% {
+    left: -50%;
+  }
+  50.4% {
+    left: -100%;
+  }
+  67.2% {
+    left: -100%;
+  }
+  84% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+@media (max-width: 900px) {
+  .slider_figure {
+    width: 438%;
+  }
+  @keyframes slider {
+    0% {
+      left: 0%;
+    }
+    14.2% {
+      left: 0;
+    }
+    28.4% {
+      left: -109%;
+    }
+    42.8% {
+      left: -109%;
+    }
+    57.6% {
+      left: -229%;
+    }
+    72.2% {
+      left: -229%;
+    }
+    86.4% {
+      left: -337%;
+    }
+    95%{
+      left: -337%;
+    }
+    100% {
+      left: 0%;
+    }
+  }
+}
+
+
+.card {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+.image_container {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  /* width: 10rem; */
+}
+.card_image {
+  width: 280px;
+  /* height: 100%; */
+  transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .card_image {
+    width: 200px;
+  }
+  .card_heading {
+    font-size: 1.3rem;
+  }
+  .card_para {
+    font-size: 1rem;
+  }
+}
+.card_image:hover {
+  transform: scale(1.05);
+}
+.card_description {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.card_heading {
+  font-size: 1.8rem;
+}
+.card_para {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  text-shadow: none;
+}
+.dash {
+  width: 100px;
+  height: 2px;
+  background-color: red;
+}
+.bold {
+  font-weight: bold;
+}
+
+/* initiative_container desing */
+.initiative_container {
+  padding: 3rem 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.initiative_heading {
+  text-align: center;
+  font-size: 2.2rem;
+}
+.initiative_slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.4rem;
+  background-color: #d34e65;
+  color: white;
+  height: 275px;
+  width: 250.5px;
+  border-right: 1px solid #c7d2e1;
+  line-height: 28px;
+  gap: 2rem;
+}
+.box_description {
+  font-size: 22px;
+}
+.box a {
+  width: 100%;
+}
+.box_link {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+}
+.box_link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  width: 40%;
+}
+@media (max-width: 1000px) {
+  .box_description {
+    font-size: 18px;
+  }
+  .box_link {
+    font-size: 15px;
+  }
+}
+@media (max-width: 840px) {
+  .initiative_slider {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  .box_initiative {
+    height: 180px;
+    gap: 2rem;
+  }
+  .box {
+    padding: 1rem 1rem;
+    height: 180px;
+    gap: 1rem;
+  }
+}
+
+/* impact container design */
+
+.box_initiative {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 1.4rem;
+  color: white;
+  height: 330px;
+  background-color: #5d155d;
+  width: 250.5px;
+  border-right: 1px solid #286ed8;
+  line-height: 28px;
+  gap: 2rem;
+}
+@media (max-width: 628px) {
+  .box_initiative {
+    padding: 1rem 1rem;
+    height: 180px;
+    gap: 1rem;
+  }
+}
+
+/* plateform and product section */
+.plateform_container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.plateform_heading {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.plateform_figure {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.plateform_box {
+  cursor: pointer;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 14rem;
+  width: 18rem;
+  box-shadow: 0 0 20px rgba(110, 93, 93, 0.5);
+  transition: box-shadow 0.1s ease-in-out;
+}
+.plateform_box:hover {
+  box-shadow: 0 0 20px rgba(110, 93, 93, 0.5);
+}
+.plateform_box_heading {
+  font-size: 1.3rem;
+}
+.plateform_box_para {
+  opacity: 0.7;
+  font-size: 1.1rem;
+}
+
+/* grid information container */
+.info_container {
+  margin: auto;
+  width: 60%;
+  padding: 2rem;
+}
+.little_image {
+  border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .info_container {
+    width: 90%;
+    padding: 0;
+  }
+}
+
+.info_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+@media (max-width: 1000px) {
+  .info_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+.grids {
+  color: white;
+}
+#grid-1 {
+  border: 1px solid #ccc;
+}
+#grid-2 {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #010836;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+#grid-3 {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #17b1cf;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+#grid-4 {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #1271bb;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+#grid-1 {
+  width: 100%;
+  height: 100%;
+}
+
+.grid_heading {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.grid_para {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+.img-grid {
+  width: 140px;
+}
+.grid_link {
+  display: block;
+  color: blue;
+  text-decoration: underline;
+  margin-top: 10px;
+}
