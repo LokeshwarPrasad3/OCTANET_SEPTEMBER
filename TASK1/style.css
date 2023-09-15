@@ -68,6 +68,7 @@ nav .menu-btn i {
   display: none;
   color: #fff;
   font-size: 24px;
+  cursor: pointer;
 }
 
 nav ul li {
