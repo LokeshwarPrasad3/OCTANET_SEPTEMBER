@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "signika negative", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(46, 9, 46);
+  color: white;
+}
+/* container which contain all contents */
+.main_container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  gap: 1rem;
+}
+
+/* container of todoapp */
+.container_todoapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(68, 21, 68);
+  width: 50%;
+  margin: auto;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 1px 5px 1px rgb(112, 156, 29);
+  gap: 1.5rem;
+}
+
+/* heading of todoapp */
+.main_heading {
+  text-transform: uppercase;
+  background: linear-gradient(to right, purple, rgb(49, 96, 102), red);
+  padding: 0.2rem 1.5rem;
+  border-radius: 10px;
+}
+/* container of inputs of todo container */
+.input_todoapp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+/* when focused then remove extra focused outer line */
+input:focus,
+textarea:focus {
+  outline: none;
+}
+/* input text for title */
+#input_title {
+  width: 21.5rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: azure;
+  border-radius: 0.1rem;
+  width: 100%;
+}
+/* input textarea which get description */
+#input_description {
+  width: 21.5rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: azure;
+  border-radius: 0.1rem;
+  width: 100%;
+}
+/* input instruction label */
+.label {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+/* each inputs have common classname */
+.sections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+}
+/* input type button class design */
+.submit {
+  width: fit-content;
+  cursor: pointer;
+  padding: 0.35rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in;
+  background-color: rgb(34, 233, 34);
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  position: relative;
+  top: 1rem;
+  left: 0.2rem;
+}
+.submit:hover {
+  background-color: rgb(35, 182, 35);
+}
+
+/* showing all list of users when added */
+.show_list_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  width: 50%;
+  margin: auto;
+}
+/* each cards designs */
+.cards {
+  font-family: "signika negative", sans-serif;
+  padding: 0.5rem;
+  width: 11rem;
+  max-height: 5rem;
+  height: 5rem;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgb(112, 156, 29);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  background-color: rgb(68, 21, 68);
+}
+/* contains title and operations delete edits container */
+.title_operations {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* contains operations edit delete */
+.operations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+/* edit buttons design */
+.edit {
+  padding: 1px 6px;
+  background-color: rgb(32, 161, 32);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.edit:hover {
+  background-color: rgb(5, 248, 5);
+}
+/* delete buttons design */
+.delete {
+  padding: 1px 6px;
+  background-color: red;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.delete:hover {
+  background-color: rgb(236, 82, 82);
+}
+/* showing cards */
+.show_title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+/* showing description */
+.show_description {
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGNS */
+
+@media (max-width: 1300px) {
+  /* container of todoapp */
+  .container_todoapp {
+    width: 60%;
+    padding: 2rem 1.5rem 3rem 1.5rem;
+  }
+  /* showing list sections */
+  .show_list_section {
+    width: 60%;
+  }
+}
+
+@media (max-width: 850px) {
+  /* container of todoapp */
+  .container_todoapp {
+    width: 91%;
+  }
+  /* showing list sections */
+  .show_list_section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  /* parent of all contents */
+  .main_container {
+    margin-top: 2rem;
+  }
+  /* indivisual cards of list */
+  .cards {
+    padding: 0.7rem 0.5rem;
+    width: 11rem;
+    max-height: 5rem;
+    height: 5rem;
+    box-shadow: 0 0 5px rgb(112, 156, 29);
+  }
+}

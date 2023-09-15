@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyToDo-List App</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Overpass&family=Signika+Negative&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- container which contain all contents -->
+    <div class="main_container">
+        <!-- container of todoapp -->
+        <div class="container_todoapp">
+            <!-- heading of todoapp -->
+            <h1 class="main_heading">My ToDo List</h1>
+            <!-- container of inputs of todo container -->
+            <div class="input_todoapp">
+                <!-- input text for title -->
+                <div class="title_section sections">
+                    <label class="label" for="input_title">Title Name</label>
+                    <input type="text" name="" id="input_title" placeholder=" Sleeping">
+                </div>
+                <!-- input textarea which get description -->
+                <div class="description_section sections">
+                    <label class="label" for="input_description">Description</label>
+                    <textarea id="input_description" placeholder=" Sleeping time is 10.00 PM"></textarea>
+                </div>
+                <!-- input type button class design -->
+                <div class="button_section sections">
+                    <button id="submit_todo" class="submit">Add</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <strong class="label">Notes
+            <hr style="width: 100%;color:yellow;">
+        </strong>
+
+        <!-- showing all list of users when added -->
+        <div class="show_list_section">
+
+            <!-- <div class="cards">
+                <div class="title_operations">
+                    <p class="show_title">Lokeshwar</p>
+                    <div class="operations">
+                        <span class="edit">E</span>
+                        <span class="delete">D</span>
+                    </div>
+                </div>
+                <p class="show_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ipsam!
+                </p>
+            </div> -->
+
+        </div>
+    </div>
+
+    <!-- includes external js file here -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
