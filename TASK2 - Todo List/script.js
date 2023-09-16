@@ -33,7 +33,7 @@ function showTodoList() {
                 `
                 <div class="cards">
                     <div class="title_operations">
-                        <p class="show_title">${element.title.toString().toUpperCase()}</p>
+                        <p class="show_title">${index+1} . ${element.title.toString().toUpperCase()}</p>
                         <span class="show_priority">${element.priority}</span>
                         <div class="operations">
                             <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-trash-can delete"></i>
