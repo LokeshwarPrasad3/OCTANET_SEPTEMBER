@@ -41,7 +41,9 @@ function showTodoList() {
                     </div>
                         <p class="show_description">${element.description}</p>
                         <p class="show_deadline">Label : <span>${element.label.toString().toUpperCase() }</span></p>
-                        <p class="show_deadline">Deadline: ${element.date} ${element.time}</p>
+                        <p class="show_deadline">
+                        Deadline: 
+                        <span class="bold">${element.date}</span> | Time :  <span class="bold">${element.time}</span></p>
                 </div>
                 `;
 

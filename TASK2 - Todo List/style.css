@@ -13,7 +13,7 @@ body {
 }
 /* container which contain all contents */
 .main_container {
-  margin: 5rem 0;
+  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,7 +31,7 @@ body {
   background-color: rgb(68, 21, 68);
   width: 50%;
   margin: auto;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   box-shadow: 0 1px 5px 1px rgb(112, 156, 29);
   gap: 1.5rem;
 }
@@ -66,6 +66,9 @@ textarea:focus {
   background-color: azure;
   border-radius: 0.1rem;
   width: 100%;
+}
+.bold {
+  font-weight: bold;
 }
 /* input textarea which get description */
 #input_description {
@@ -122,21 +125,23 @@ textarea:focus {
   gap: 1.2rem;
   width: 50%;
   margin: auto;
+
+  max-height: 240px;
+  overflow: auto;
 }
 /* each cards designs */
 .cards {
   width: 100%;
-   max-height: 6.4rem;
-   height: 6.4rem;
+  max-height: 6.9rem;
+  height: 6.9rem;
   font-family: "signika negative", sans-serif;
-   padding: 0.7rem 0.5rem;
+  padding: 0.7rem;
   overflow-y: auto;
   box-shadow: 0 0 5px rgb(112, 156, 29);
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
   background-color: rgb(68, 21, 68);
-
 }
 /* contains title and operations delete edits container */
 .title_operations {
@@ -171,20 +176,20 @@ textarea:focus {
 }
 /* showing cards */
 .show_title {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 /* showing description */
 .show_description {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 .show_deadline {
   position: relative;
-  top: 0.5rem;
-  font-size: 0.8rem;
+  top: 0.2rem;
+  font-size: 0.9rem;
   color: rgb(5, 240, 201);
 }
-.show_priority{
+.show_priority {
   background-color: white;
   color: red;
   font-size: 0.7rem;
@@ -197,7 +202,7 @@ textarea:focus {
   display: flex;
   gap: 0.5rem;
 }
-#labels{
+#labels {
   padding: 1px 0.3rem;
   border: none;
   border-radius: 0.1rem;
@@ -235,10 +240,8 @@ textarea:focus {
   }
   /* indivisual cards of list */
   .cards {
-    padding: 0.7rem 0.5rem;
+    padding: 0.7rem;
     width: 90%;
-    max-height: 6.3rem;
-    height: 6.3rem;
     box-shadow: 0 0 5px rgb(112, 156, 29);
   }
 }
