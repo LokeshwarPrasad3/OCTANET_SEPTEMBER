@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyToDo-List App</title>
+    <title>MY-TODO-LIST | Lokeshwar</title>
+    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Overpass&family=Signika+Negative&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -31,9 +34,32 @@
                     <label class="label" for="input_description">Description</label>
                     <textarea id="input_description" placeholder=" Sleeping time is 10.00 PM"></textarea>
                 </div>
+                <!-- set periority -->
+                <div class="set_priority">
+                    <select name="" id="get_priority">
+                        <option value="">SET PRIORITY</option>
+                        <option value="HIGH">HIGH</option>
+                        <option value="NORMAL">NORMAL</option>
+                        <option value="LOW">LOW</option>
+                    </select>
+                    <!-- Label input -->
+                    <input type="text" name="" id="input_label" placeholder=" Labels,">
+                </div>
+                <!-- time deadline -->
+                <div class="deadline sections">
+                    <label class="label" for="input_date">Deadline</label>
+                    <div class="timedate">
+                        <input type="date" name="" id="input_date">
+                        <input type="time" name="" id="input_time">
+                    </div>
+                </div>
                 <!-- input type button class design -->
                 <div class="button_section sections">
-                    <button id="submit_todo" class="submit">Add</button>
+                    <button id="submit_todo" class="submit">
+                        <span>Add</span>
+                        <!-- <i class="fa-regular fa-circle-plus"></i> -->
+                        <i class="fa-solid fa-circle-plus "></i>
+                    </button>
                 </div>
 
             </div>
@@ -50,13 +76,16 @@
             <!-- <div class="cards">
                 <div class="title_operations">
                     <p class="show_title">Lokeshwar</p>
+                    <span class="show_priority">HIGH</span>
                     <div class="operations">
-                        <span class="edit">E</span>
-                        <span class="delete">D</span>
+                        <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-pen-to-square edit"></i>
+                        <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-trash-can delete"></i>
                     </div>
                 </div>
-                <p class="show_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ipsam!
+                <p class="show_description">consectetur adipisicing elit. Deleniti, ipsam!
                 </p>
+                <p class="show_deadline">Label : <span>PERSNAL</span> </p>
+                <p class="show_deadline">Deadline : 23/3/32 3:23</p>
             </div> -->
 
         </div>

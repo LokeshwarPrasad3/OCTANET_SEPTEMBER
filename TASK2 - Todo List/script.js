@@ -1,6 +1,6 @@
 
 
-// Parent of all cards 
+// Parent of all cards
 const showCards = document.querySelector(".show_list_section");
 
 
@@ -26,18 +26,22 @@ function showTodoList() {
         let cardHTML = "";
 
         // Show all cards data getted from localstorage store in cardHTML
+        // <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-circle-check delete"></i>
+        // <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-pen-to-square edit"></i>
         todoList.map((element, index) => {
             cardHTML +=
                 `
                 <div class="cards">
                     <div class="title_operations">
                         <p class="show_title">${element.title.toString().toUpperCase()}</p>
+                        <span class="show_priority">${element.priority}</span>
                         <div class="operations">
-                            <span onclick="deleteList(${index})" id=${index} class="edit" >E</span>
-                            <span onclick="deleteList(${index})" id=${index} class="delete" >D</span>
+                            <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-trash-can delete"></i>
                         </div>
                     </div>
-                    <p class="show_description">${element.description}</p>
+                        <p class="show_description">${element.description}</p>
+                        <p class="show_deadline">Label : <span>${element.label.toString().toUpperCase() }</span></p>
+                        <p class="show_deadline">Deadline: ${element.date} ${element.time}</p>
                 </div>
                 `;
 
@@ -47,19 +51,24 @@ function showTodoList() {
     }
 }
 
-
-// When clicked on add then add cards in localstorage and display that
-const button = document.querySelector('#submit_todo');
-button.addEventListener('click', function (e) {
+// Add new list when clicked method implementation
+function addNewList(e){
     // page is not load when clicked
     e.preventDefault();
 
     // getting user filled details
     let title = document.querySelector('#input_title');
     let description = document.querySelector('#input_description');
+    // getting time and date
+    let date = document.querySelector("#input_date");
+    let time = document.querySelector("#input_time");
+    let priority = document.querySelector("#get_priority");
+    let label = document.querySelector("#input_label");
 
     // check values is not empty and return
-    if (!title.value || !description.value) {
+    if (!title.value || !description.value || !time.value || !date.value
+        //  || !priority.value || !label.value
+        ) {
         alert("Fill All Inputs");
         return;
     }
@@ -75,6 +84,10 @@ button.addEventListener('click', function (e) {
     const newNotes = {
         title: title.value,
         description: description.value,
+        priority: priority.value,
+        label: label.value,
+        date: date.value,
+        time: time.value,
     }
     // after craeting object push to original array
     todoList.push(newNotes);
@@ -84,11 +97,18 @@ button.addEventListener('click', function (e) {
     // After all done empty user inputs values
     title.value = "";
     description.value = "";
+    label.value = "";
+    priority.value = "";
+    date.value = "";
+    time.value = "";
 
     // Show all updated cards of todolist
     showTodoList();
+}
 
-});
+// When clicked on add then add cards in localstorage and display that
+const button = document.querySelector('#submit_todo');
+button.addEventListener('click', addNewList);
 
 
 // Delete particular Todo List functionality
