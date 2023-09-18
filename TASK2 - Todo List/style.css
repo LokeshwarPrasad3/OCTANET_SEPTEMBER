@@ -85,6 +85,13 @@ textarea:focus {
   font-weight: 600;
   font-size: 1.4rem;
 }
+/* completed button */
+.completed_button {
+  cursor: pointer;
+  padding: 0 2px;
+  /* Add your normal button styles here */
+}
+
 /* each inputs have common classname */
 .sections {
   display: flex;

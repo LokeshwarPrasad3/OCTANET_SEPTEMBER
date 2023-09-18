@@ -33,14 +33,15 @@ function showTodoList() {
                 `
                 <div class="cards">
                     <div class="title_operations">
-                        <p class="show_title">${index+1} . ${element.title.toString().toUpperCase()}</p>
+                        <p class="show_title">${index + 1} . ${element.title.toString().toUpperCase()}</p>
                         <span class="show_priority">${element.priority}</span>
                         <div class="operations">
+                             <button ${element.isCompleted ? 'disabled' : ''} onclick="disabledButton(event)" data-task-id=${index} class="completed_button">Completed</button>
                             <i onclick="deleteList(${index})" id=${index} class="fa-regular fa-trash-can delete"></i>
                         </div>
                     </div>
                         <p class="show_description">${element.description}</p>
-                        <p class="show_deadline">Label : <span>${element.label.toString().toUpperCase() }</span></p>
+                        <p class="show_deadline">Label : <span>${element.label.toString().toUpperCase()}</span></p>
                         <p class="show_deadline">
                         Deadline: 
                         <span class="bold">${element.date}</span> | Time :  <span class="bold">${element.time}</span></p>
@@ -54,7 +55,7 @@ function showTodoList() {
 }
 
 // Add new list when clicked method implementation
-function addNewList(e){
+function addNewList(e) {
     // page is not load when clicked
     e.preventDefault();
 
@@ -66,11 +67,13 @@ function addNewList(e){
     let time = document.querySelector("#input_time");
     let priority = document.querySelector("#get_priority");
     let label = document.querySelector("#input_label");
+    // completed or not
+    let isCompleted = false;
 
     // check values is not empty and return
     if (!title.value || !description.value || !time.value || !date.value
         //  || !priority.value || !label.value
-        ) {
+    ) {
         alert("Fill All Inputs");
         return;
     }
@@ -90,9 +93,14 @@ function addNewList(e){
         label: label.value,
         date: date.value,
         time: time.value,
+        isCompleted: isCompleted,
     }
-    // after craeting object push to original array
-    todoList.push(newNotes);
+    // if priority is high then unshift to first no
+    if (newNotes.priority === 'HIGH')
+        todoList.unshift(newNotes);
+    else
+        // after craeting object push to original array
+        todoList.push(newNotes);
     // set originArray to localStoarge name of todoList
     localStorage.setItem("todoList", JSON.stringify(todoList));
 
@@ -129,10 +137,26 @@ function deleteList(index) {
 
     // Not set Updated List in localstorage
     localStorage.setItem("todoList", JSON.stringify(latestList));
-    // console latest list
-    console.log(latestList);
     // Show all the updated List
     showTodoList();
 }
 
+// IF clicked on completed button then disabled now change in localstorage
+function disabledButton(e) {
+    // Disable the button
+    e.target.disabled = true;
 
+    // Get the task index from the data-task-id attribute
+    const taskIndex = e.target.getAttribute('data-task-id');
+
+    // Update the task in local storage by setting isCompleted to true
+    let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
+
+    if (taskIndex >= 0 && taskIndex < todoList.length) {
+        todoList[taskIndex].isCompleted = true;
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+    }
+
+    // Update the display
+    showTodoList();
+}
